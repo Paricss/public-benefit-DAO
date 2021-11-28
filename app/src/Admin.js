@@ -32,14 +32,7 @@ export default () => {
               method="start"
           />
         </div>
-        <div>
-          <h2>Whitelist</h2>
-          <ContractForm
-              drizzle={drizzle}
-              contract="ICO"
-              method="whitelist"
-          />
-        </div>
+
         <div>
           <h2>Release</h2>
           <ContractForm
