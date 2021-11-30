@@ -1,14 +1,5 @@
 import React from "react";
-import './assets/css/background.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-import DD from "./dd.js";
-import ICO from "./ICO.js";
+
 import { Drizzle } from '@drizzle/store';
 import { drizzleReactHooks } from "@drizzle/react-plugin";
 
@@ -21,16 +12,19 @@ import Admin from './Admin.js';
 const drizzle = new Drizzle(drizzleOptions);
 const { DrizzleProvider } = drizzleReactHooks;
 
-function App() {
+function ICO() {
   return (
-      <div >
-          <Routes>
-            <Route path="/ICO" element = {<ICO /> }/>
-            <Route path="/dd" element = {<DD /> }/>
-          </Routes>
-
+      <div className="container">
+        <h1>ICO</h1>
+        <DrizzleProvider drizzle={drizzle}>
+          <LoadingContainer>
+            <ICOInfo />
+            <Investor />
+            <Admin />
+          </LoadingContainer>
+        </DrizzleProvider>
       </div>
   );
 }
 
-export default App;
+export default ICO;

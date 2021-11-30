@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './assets/css/background.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router
+
+} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className='mainPage' >
+      <Router >
+        <App />
+      </Router>
+    </div>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
