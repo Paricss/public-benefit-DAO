@@ -49,15 +49,14 @@ contract ICO {
   }
 
 
-  function buy()
-  payable
-  external
-  icoActive() {
-    require(msg.value % price == 0, 'have to send a multiple of price');
-    uint quantity = price * msg.value/(10**18);
-    require(msg.value >= minPurchase && quantity<= maxPurchase, 'have to send between minPurchase and maxPurchase');
 
-    require(quantity <= availableTokens, 'Not enough tokens left for sale');
+  function buy() payable external icoActive() {
+    require(msg.value % price == 0, 'have to send a multiple of price');
+//    uint quantity = price * msg.value/(10**18);
+    uint quantity = msg.value*price;
+    require(msg.value >= minPurchase && quantity<= maxPurchase*10**18, 'have to send between minPurchase and maxPurchase');
+
+    require(quantity <= availableTokens*10**18, 'Not enough tokens left for sale');
     sales.push(Sale(
         msg.sender,
         quantity
@@ -78,7 +77,7 @@ contract ICO {
   function release()
   external
   onlyAdmin()
-  icoEnded()
+//  icoEnded()
   tokensNotReleased() {
     HumanToken tokenInstance = HumanToken(token);
     for(uint i = 0; i < sales.length; i++) {

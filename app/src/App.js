@@ -7,7 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import DD from "./dd.js";
+import MainContributePage from "./MainContributePage.js";
 import ICO from "./ICO.js";
 import { Drizzle } from '@drizzle/store';
 import { drizzleReactHooks } from "@drizzle/react-plugin";
@@ -15,7 +15,7 @@ import { drizzleReactHooks } from "@drizzle/react-plugin";
 import drizzleOptions from "./drizzleOptions";
 import LoadingContainer from './LoadingContainer.js';
 import ICOInfo from './ICOInfo.js';
-import Investor from './Investor.js';
+import ContributePage from './ContributePage.js';
 import Admin from './Admin.js';
 
 const drizzle = new Drizzle(drizzleOptions);
@@ -26,7 +26,8 @@ function App() {
       <div >
           <Routes>
             <Route path="/ICO" element = {<ICO /> }/>
-            <Route path="/dd" element = {<DD /> }/>
+            <Route path="/mainContributePage" element = {<MainContributePage /> }/>
+            <Route path="/contributePage" element={<ContributePage /> }/>
           </Routes>
 
       </div>

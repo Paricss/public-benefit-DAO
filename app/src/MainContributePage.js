@@ -21,6 +21,17 @@ import Button from '@mui/material/Button';
 import TwitterIcon from '@mui/icons-material/Twitter';
 //icon
 
+//drizzle
+import { Drizzle } from '@drizzle/store';
+import { drizzleReactHooks } from "@drizzle/react-plugin";
+import drizzleOptions from "./drizzleOptions";
+import LoadingContainer from "./LoadingContainer";
+import Investor from "./Investor";
+
+const drizzle = new Drizzle(drizzleOptions);
+const { DrizzleProvider } = drizzleReactHooks;
+//
+
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -28,7 +39,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function DD() {
+function MainContributePage() {
 
   const [values, setValues] = React.useState({
     amount: ''
@@ -36,6 +47,7 @@ function DD() {
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
+    console.log(values);
   };
 
   return (
@@ -57,8 +69,8 @@ function DD() {
                   <img src={logo} width="200" height="160"/>
                 </div>
                 <div>
-                  <h1>EquityDAO</h1>
-                  <TwitterIcon /><span>@WorldEquityDAO</span>
+                  <h1>BetterDAO</h1>
+                  <TwitterIcon /><span>@BetterDAO</span>
                 </div>
               </div>
 
@@ -87,8 +99,15 @@ function DD() {
                       label="Amount"
                   />
                 </FormControl>
-                <Button variant="contained">Contribute</Button>
-                <p style={{margin:'0 0 0 20px'}}>100 000 $Equity / ETH</p>
+
+                <Button variant="contained"><DrizzleProvider drizzle={drizzle}>
+                  <LoadingContainer>
+                    {/*<ICOInfo />*/}
+                    <Investor values ={values.amount}/>
+                    {/*<Admin />*/}
+                  </LoadingContainer>
+                </DrizzleProvider></Button>
+                <p style={{margin:'0 0 0 20px'}}>100 000 $Better / ETH</p>
 
             </Grid>
             <Grid item xs={12}>
@@ -96,12 +115,10 @@ function DD() {
             </Grid>
             <Grid item xs={12} md={6}>
               <Item>
-                <h2>What is EquityDAO?</h2>
-                <p>EquityDAO is a decentralized autonomous organization.a beautiful experiment in a single-purpose DAO. We now believe this project has run its course.
+                <h2>What is BetterDAO?</h2>
+                <p>BetterDAO is a decentralized autonomous organization.a beautiful experiment.
 
-                  The community has taken all actions that it was organized to accomplish: we raised capital, we bid at Sotheby’s, and upon losing, we made full refunds available to the community as promised.
-
-                  Having lost the auction and following the core team's choice to wind down, we would like to remind you that the tokens possess no rights, governance, or utility other than redeeming them for ethereum from the smart contract held in Juicebox at a ratio of 1,000,000:1—the same ratio at which contributions were made to the initial crowdfund to buy the Constitution.
+                  All funds will be distributed through voting in the future.
                 </p>
               </Item>
             </Grid>
@@ -119,6 +136,10 @@ function DD() {
             <h1>What is DAO?</h1>
             <p style={{margin:'0'}}>A decentralized autonomous organization, sometimes called a decentralized autonomous corporation, is an organization represented by rules encoded as a computer program that is transparent, controlled by the organization members and not influenced by a central government.
             </p>
+            <p style={{margin:'0'}}>A decentralized autonomous organization, sometimes called a decentralized autonomous corporation, is an organization represented by rules encoded as a computer program that is transparent, controlled by the organization members and not influenced by a central government.
+            </p>
+            <p style={{margin:'0'}}>A decentralized autonomous organization, sometimes called a decentralized autonomous corporation, is an organization represented by rules encoded as a computer program that is transparent, controlled by the organization members and not influenced by a central government.
+            </p>
           </div>
         </Container>
       </div>
@@ -126,4 +147,4 @@ function DD() {
   );
 }
 
-export default DD;
+export default MainContributePage;

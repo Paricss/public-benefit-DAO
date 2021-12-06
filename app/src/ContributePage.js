@@ -12,19 +12,19 @@ import Admin from './Admin.js';
 const drizzle = new Drizzle(drizzleOptions);
 const { DrizzleProvider } = drizzleReactHooks;
 
-function ICO() {
+function ContributePage() {
   return (
-      <div className="container">
-        <h1>ICO</h1>
+      <div >
+        {/*<h1>Contribute</h1>*/}
         <DrizzleProvider drizzle={drizzle}>
           <LoadingContainer>
-            <ICOInfo />
-            {/*<Investor />*/}
-            <Admin />
+            {/*<ICOInfo />*/}
+            <Investor />
+            {/*<Admin />*/}
           </LoadingContainer>
         </DrizzleProvider>
       </div>
   );
 }
 
-export default ICO;
+export default ContributePage;
