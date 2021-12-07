@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import MainContributePage from "./MainContributePage.js";
 import ICO from "./ICO.js";
+import RockPaperScissors from "./RockPaperScissors.js";
 import { Drizzle } from '@drizzle/store';
 import { drizzleReactHooks } from "@drizzle/react-plugin";
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/ICO" element = {<ICO /> }/>
             <Route path="/mainContributePage" element = {<MainContributePage /> }/>
             <Route path="/contributePage" element={<ContributePage /> }/>
+            <Route path="/rockPaperScissors" element={<RockPaperScissors /> }/>
           </Routes>
 
       </div>

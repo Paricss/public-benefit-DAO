@@ -84,6 +84,7 @@ contract ICO {
       Sale storage sale = sales[i];
       tokenInstance.transfer(sale.investor, sale.quantity);
     }
+    released = true;
   }
 
   function withdraw(

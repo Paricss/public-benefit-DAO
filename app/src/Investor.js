@@ -11,19 +11,19 @@ export default ({values}) => {
   const state = useDrizzleState(state => state);
   return (
       // <div className="App">
-        <div>
-          <h2>Investment (token)</h2>
-          <ContractData
-              drizzle={drizzle}
-              drizzleState={state}
-              contract="ICO"
-              method="getSale"
-              methodArgs={[state.accounts[0]]}
-          />
+      //   <div>
+      //     <h2>Investment (token)</h2>
+      //     <ContractData
+      //         drizzle={drizzle}
+      //         drizzleState={state}
+      //         contract="ICO"
+      //         method="getSale"
+      //         methodArgs={[state.accounts[0]]}
+      //     />
+      //
 
 
-
-           <h2>Buy</h2>
+           // <h2>Buy</h2>
 
       <ContractForm
 
@@ -32,7 +32,8 @@ export default ({values}) => {
           sendArgs={{value: 1000000000000000000}}
           method="buy"
           // render={(handleSubmit)=> {return <div inputs={342} handleSubmit={handleSubmit}>asd</div>}}
+          // render={()=>{ "C"}}
       />
-      </div>
+      // </div>
   )
 };
