@@ -2,6 +2,7 @@ import React from "react";
 
 import { drizzleReactHooks } from "@drizzle/react-plugin";
 import { newContextComponents } from "@drizzle/react-components";
+import HumanToken from "./contracts/HumanToken.json";
 
 const { useDrizzle, useDrizzleState } = drizzleReactHooks;
 const { ContractData, ContractForm } = newContextComponents;
@@ -26,7 +27,6 @@ export default ({values}) => {
            // <h2>Buy</h2>
 
       <ContractForm
-
           drizzle={drizzle}
           contract="ICO"
           sendArgs={{value: 1000000000000000000}}
@@ -34,6 +34,6 @@ export default ({values}) => {
           // render={(handleSubmit)=> {return <div inputs={342} handleSubmit={handleSubmit}>asd</div>}}
           // render={()=>{ "C"}}
       />
-      // </div>
+
   )
 };

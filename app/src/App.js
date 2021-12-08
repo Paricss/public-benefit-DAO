@@ -10,6 +10,8 @@ import {
 import MainContributePage from "./MainContributePage.js";
 import ICO from "./ICO.js";
 import RockPaperScissors from "./RockPaperScissors.js";
+import Vote from "./Vote.js";
+import TokenTest from "./TokenTest";
 import { Drizzle } from '@drizzle/store';
 import { drizzleReactHooks } from "@drizzle/react-plugin";
 
@@ -30,6 +32,8 @@ function App() {
             <Route path="/mainContributePage" element = {<MainContributePage /> }/>
             <Route path="/contributePage" element={<ContributePage /> }/>
             <Route path="/rockPaperScissors" element={<RockPaperScissors /> }/>
+            <Route path="/vote" element={<Vote /> }/>
+            <Route path="/TokenTest" element={<TokenTest /> }/>
           </Routes>
 
       </div>

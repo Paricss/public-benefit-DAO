@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import RockPaperScissors from './contracts/RockPaperScissors.json';
+import HumanToken from './contracts/HumanToken.json';
 import  Web3 from 'web3';
 import { getWeb3 } from './utils.js';
+import {ethers} from 'ethers'
 
 //img
 import rockImg from './assets/img/rock.jpg';
@@ -29,6 +31,7 @@ const Item = styled(Paper)(({ theme }) => ({
 function RockPaperScissorsPage() {
   const [web3, setWeb3] = useState(undefined);
   const [contract, setContract] = useState(undefined);
+  const [tokenContract, setTokenContract] = useState(undefined);
   const [accounts, setAccounts] = useState(undefined);
   const [testValue, setTestValue] = useState(undefined);
   const [choice, setChoice] = useState(undefined);
@@ -41,13 +44,21 @@ function RockPaperScissorsPage() {
       const accounts = await web3.eth.getAccounts();
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = RockPaperScissors.networks[networkId];
+
       const contract = new web3.eth.Contract(
           RockPaperScissors.abi,
           deployedNetwork && deployedNetwork.address,
       );
+
+      const tokenContract = new web3.eth.Contract(
+          HumanToken.abi,
+           "0xa7E6BB13a5A8e53A7D496b09bA5492294f064B82",
+      );
+
       setWeb3(web3);
       setAccounts(accounts);
       setContract(contract);
+      setTokenContract(tokenContract);
     }
     init();
     window.ethereum.on('accountsChanged', accounts => {
@@ -63,9 +74,19 @@ function RockPaperScissorsPage() {
   //   console.log(re);
   //   console.log(testValue);
   // }
+  async function setToken(e){
+    e.preventDefault();
+    await contract.methods.setTokenAddress("0xa7E6BB13a5A8e53A7D496b09bA5492294f064B82").send({from: accounts[0]});
+    console.log( contract.methods.getTokenAddress().call());
+    // console.log(tokenContract);
+    // console.log( await tokenContract.methods.totalSupply().call());
+
+  }
 
   async function join(e){
     e.preventDefault();
+    await tokenContract.methods.approve("0xB45800F6bE1a51285EC79787d520bc6fc20851F9",ethers.utils.parseUnits("1000000000","ether")).send({from: accounts[0]});
+    // await contract.methods.approveToken().send({from: accounts[0]});
     await contract.methods.join().send({from: accounts[0]});
     console.log(accounts[0]);
   }
@@ -108,6 +129,7 @@ function RockPaperScissorsPage() {
     }
     setResult(re);
     console.log(re);
+    // await contract.methods.finishGame().send({from: accounts[0]});
   }
 
   async function newGame(e){
@@ -139,7 +161,10 @@ function RockPaperScissorsPage() {
         <div className="desk">
 
         </div>
-        <h2 onClick = {e => join(e)}>join:</h2>
+        <Button variant="contained" disableElevation onClick = {e => setToken(e)}>
+          ----- Set Token Address ------
+        </Button>
+        <h1>10 tokens bet for every game.10% token will go to funds for charity.</h1>
         <Button variant="contained" disableElevation onClick = {e => join(e)}>
           ----- Join the Game ------
         </Button>
@@ -166,8 +191,8 @@ function RockPaperScissorsPage() {
         <h2>Current Choice: </h2>
 
         <form onSubmit={e => showResult(e)}>
-          <button type="submit">Submit</button>
-          <button type="submit">Reveal Result</button>
+          {/*<button type="submit">Submit</button>*/}
+          <button type="submit">Reveal Result and new a game</button>
           <p>{testValue && `Result: ${testValue}`}</p>
           <p>{result && `Result: ${result}`}</p>
         </form>

@@ -57,11 +57,12 @@ function MainContributePage() {
           {/*<Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />*/}
 
 
-
+          <h2 ><a href="/rockPaperScissors">Game</a></h2>
+          <h2 ><a href="/vote">Vote</a></h2>
           <Grid container spacing={3} rowSpacing={1} >
 
             <Grid item xs={12} >
-              <Item><h2>All donations will be used for charity</h2></Item>
+              <Item><h2>We are gonna make world better!</h2></Item>
             </Grid>
             <Grid item xs={4} md={4}>
               <div style={{display:'flex'}}>
