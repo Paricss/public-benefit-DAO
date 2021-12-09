@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-import logo from './assets/img/Logo2.gif';
+import logo from './assets/img/earthLogo.png';
 import CustomizedProgressBars from './CustomizedProgressBars';
 //input filed
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -57,8 +57,8 @@ function MainContributePage() {
           {/*<Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />*/}
 
 
-          <h2 ><a href="/rockPaperScissors">Game</a></h2>
-          <h2 ><a href="/vote">Vote</a></h2>
+          {/*<h2 ><a href="/rockPaperScissors">Game</a></h2>*/}
+          {/*<h2 ><a href="/vote">Vote</a></h2>*/}
           <Grid container spacing={3} rowSpacing={1} >
 
             <Grid item xs={12} >
@@ -67,11 +67,11 @@ function MainContributePage() {
             <Grid item xs={4} md={4}>
               <div style={{display:'flex'}}>
                 <div style={{margin: '0 20px'}}>
-                  <img src={logo} width="200" height="160"/>
+                  <img src={logo} width="140" height="140"/>
                 </div>
                 <div>
                   <h1>BetterDAO</h1>
-                  <TwitterIcon /><span>@BetterDAO</span>
+                  <a href="https://twitter.com/BetterDAO"><TwitterIcon /> <span>@BetterDAO</span></a>
                 </div>
               </div>
 

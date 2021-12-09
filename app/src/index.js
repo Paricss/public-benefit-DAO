@@ -4,6 +4,7 @@ import './index.css';
 import './assets/css/background.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router
 

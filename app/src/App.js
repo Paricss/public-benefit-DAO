@@ -12,6 +12,7 @@ import ICO from "./ICO.js";
 import RockPaperScissors from "./RockPaperScissors.js";
 import Vote from "./Vote.js";
 import TokenTest from "./TokenTest";
+import Header from './Header';
 import { Drizzle } from '@drizzle/store';
 import { drizzleReactHooks } from "@drizzle/react-plugin";
 
@@ -27,6 +28,7 @@ const { DrizzleProvider } = drizzleReactHooks;
 function App() {
   return (
       <div >
+        <Header />
           <Routes>
             <Route path="/ICO" element = {<ICO /> }/>
             <Route path="/mainContributePage" element = {<MainContributePage /> }/>
