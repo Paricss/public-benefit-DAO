@@ -52,7 +52,7 @@ function RockPaperScissorsPage() {
 
       const tokenContract = new web3.eth.Contract(
           HumanToken.abi,
-           "0x2d0B7FE5864684651Eb872492B8257b1A0464567",
+           "0x29B3f5358ADF061c696bd2FF3d9113fdfAC547dC",
       );
 
       setWeb3(web3);
@@ -76,7 +76,7 @@ function RockPaperScissorsPage() {
   // }
   async function setToken(e){
     e.preventDefault();
-    await contract.methods.setTokenAddress("0x2d0B7FE5864684651Eb872492B8257b1A0464567").send({from: accounts[0]});
+    await contract.methods.setTokenAddress("0x29B3f5358ADF061c696bd2FF3d9113fdfAC547dC").send({from: accounts[0]});
     console.log( contract.methods.getTokenAddress().call());
     // console.log(tokenContract);
     // console.log( await tokenContract.methods.totalSupply().call());
@@ -85,7 +85,7 @@ function RockPaperScissorsPage() {
 
   async function join(e){
     e.preventDefault();
-    await tokenContract.methods.approve("0xf4c582827b24a870A38604e7C8D2bE8282B68BDa",ethers.utils.parseUnits("1000000000","ether")).send({from: accounts[0]});
+    await tokenContract.methods.approve("0xED9cb36ad1520E14e2bE91e23C9442D16299747D",ethers.utils.parseUnits("1000000000","ether")).send({from: accounts[0]});
     // await contract.methods.approveToken().send({from: accounts[0]});
     await contract.methods.join().send({from: accounts[0]});
     console.log(accounts[0]);
