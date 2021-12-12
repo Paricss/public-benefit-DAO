@@ -21,7 +21,7 @@ export default function CustomizedProgressBars() {
   return (
       <Box sx={{ flexGrow: 1 }}>
         {/*<FacebookCircularProgress />*/}
-        <h3>Contribution Progress</h3>
+        <h3 className="wordColor">Contribution Progress</h3>
         <BorderLinearProgress variant="determinate" value={50} />
       </Box>
   );

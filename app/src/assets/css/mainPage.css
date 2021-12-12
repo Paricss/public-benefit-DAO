@@ -1,0 +1,44 @@
+.gapMargin{
+    margin-top: 40px;
+}
+
+.buyComponentMargin{
+    margin-top: 3%;
+}
+
+.wordColor{
+    color: white;
+}
+
+.imgRadius{
+    border-radius: 20px;
+}
+
+video {
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -220px;
+    left: 0;
+}
+
+iframe {
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -220px;
+    left: 0;
+}
+
+.viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

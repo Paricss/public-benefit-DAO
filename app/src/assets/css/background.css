@@ -1,8 +1,10 @@
-.mainPage {
-  background: linear-gradient(to bottom right,white, #E0F8F7);
-  margin: 0;
-  padding: 0;
-}
+/*.mainPage {*/
+/*  background: linear-gradient(to bottom right,#EAE5C9, #A0F1EA);*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  z-index: -2;*/
+/*}*/
 body{
   margin: 0;
 }
+
