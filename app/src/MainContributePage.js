@@ -7,9 +7,10 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-import logo from './assets/img/earthLogo.png';
+import roadmap from './assets/img/roadmap.png';
 import bgVideo from './assets/img/bgVideo.mp4';
 import CustomizedProgressBars from './CustomizedProgressBars';
+import MemberLevel from "./MemberLevel";
 //input filed
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -135,7 +136,7 @@ function MainContributePage() {
               </Grid>
               <Grid item xs={12} md={12}>
                 <h2 className="buyComponentMargin wordColor">$Better Address:</h2>
-                <p className="wordColor">0xasdasdas1314546asd123as1d3</p>
+                <p className="wordColor">0xDFc8475f43516133D79694C0E8670A73BEc7Fb09</p>
               </Grid>
                <div className="buyComponentMargin"><CustomizedProgressBars /></div>
                 <br/>
@@ -160,33 +161,19 @@ function MainContributePage() {
             </Grid>
             <Grid item xs={12} >
               <Item  className="gapMargin">
-                <h2 style={{padding:"10px"}}>🤲 We are gonna make the world better. 🌏</h2>
+                <h2 style={{padding:"20px"}}>🤲 We are gonna make the world better. 🌏</h2>
               </Item>
             </Grid>
+            <div style={{margin:'25px'}}></div>
+            <MemberLevel className='mainPage'/>
 
-
-            <Grid item xs={12} md={6} >
-              <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
-                <h2>What is BetterDAO?</h2>
-                <p>BetterDAO is a decentralized autonomous organization.a beautiful experiment.
-
-                  All funds will be distributed through voting in the future.
-                </p>
-              </Item>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
-                <h2>How to contribute</h2>
-                <iframe
-                    width="80%"
-                    height="250px"
-                    src="https://www.youtube.com/embed/OsRIHlr0_Iw&autoplay=1"
-                        title="YouTube video player" frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen></iframe>
+            <Grid item xs={12} >
+              <Item  className="gapMargin">
+                <h2 >Get to know our project</h2>
               </Item>
             </Grid>
           </Grid>
+
           <div className="gapMargin">
             {/*<h1>What is DAO?</h1>*/}
             {/*<p style={{margin:'0'}}>A decentralized autonomous organization, sometimes called a decentralized autonomous corporation, is an organization represented by rules encoded as a computer program that is transparent, controlled by the organization members and not influenced by a central government.*/}
@@ -196,12 +183,47 @@ function MainContributePage() {
             {/*<p style={{margin:'0'}}>A decentralized autonomous organization, sometimes called a decentralized autonomous corporation, is an organization represented by rules encoded as a computer program that is transparent, controlled by the organization members and not influenced by a central government.*/}
             {/*</p>*/}
           </div>
+
         </Container>
-        {/*<iframe  src="https://www.youtube.com/embed/0QBeS8PM1cE?&autoplay=1&mute=1" title="YouTube video player"*/}
-        {/*        frameBorder="0"*/}
-        {/*        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-        {/*        allowFullScreen></iframe>*/}
-        <video src={bgVideo} autoPlay loop playsInline muted></video>
+
+
+        <div className='mainPage'>
+          <Container maxWidth="lg">
+            <Grid container spacing={3} rowSpacing={1} >
+              <Grid item xs={12} md={6} >
+              <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
+                <h2>BetterDAO Roadmap</h2>
+                <img width="100%" src={roadmap}/>
+              </Item>
+            </Grid>
+              <Grid item xs={12} md={6}>
+                <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
+                  <h2>How to contribute</h2>
+                  <iframe width="70%" height="250" src="https://www.youtube.com/embed/OsRIHlr0_Iw"
+                          title="YouTube video player" frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen></iframe>
+                </Item>
+              </Grid></Grid>
+
+              <Grid item xs={12} md={12} >
+                <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
+                  <h3 style={{margin:"30px"}}>BetterDAO</h3>
+                  <p>© Copyright 2021, Better DAO. All Rights Reserved.</p>
+
+                </Item>
+              </Grid>
+          </Container>
+        </div>
+        <div className="video-container">
+        <iframe
+            className="iframe-bg"
+            src="https://www.youtube.com/embed/DUw2b79Jh4M?&autoplay=1&mute=1&loop=1&playlist=DUw2b79Jh4M" title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; loop;clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen></iframe>
+        </div>
+        {/*<video src={bgVideo} autoPlay loop playsInline muted></video>*/}
       </div>
 
   );

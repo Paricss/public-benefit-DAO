@@ -1,9 +1,9 @@
-/*.mainPage {*/
-/*  background: linear-gradient(to bottom right,#EAE5C9, #A0F1EA);*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  z-index: -2;*/
-/*}*/
+.mainPage {
+  background: linear-gradient(to bottom right,#EAE5C9, #A0F1EA);
+  margin: 0;
+  padding: 0;
+  /*z-index: -5;*/
+}
 body{
   margin: 0;
 }

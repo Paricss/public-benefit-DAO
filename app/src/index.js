@@ -12,7 +12,7 @@ import {
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className='mainPage' >
+    <div  >
       <Router >
         <App />
       </Router>
