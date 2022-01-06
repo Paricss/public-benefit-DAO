@@ -15,12 +15,75 @@ import MenuItem from '@mui/material/MenuItem';
 //img icon
 import logo from './assets/img/earthLogo.png';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import {useState} from "react";
+//
+
+//web3
+import {ethers} from 'ethers'
+
 //
 
 const pages = ['DAO', 'Discord', 'Twitter'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
+
+  //web3
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
+  const [userBalance, setUserBalance] = useState(null);
+  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+
+  const connectWalletHandler = () => {
+    if (window.ethereum && window.ethereum.isMetaMask) {
+      console.log('MetaMask Here!');
+
+      window.ethereum.request({ method: 'eth_requestAccounts'})
+          .then(result => {
+            accountChangedHandler(result[0]);
+            setConnButtonText('Wallet Connected');
+            getAccountBalance(result[0]);
+          })
+          .catch(error => {
+            setErrorMessage(error.message);
+
+          });
+
+    } else {
+      console.log('Need to install MetaMask');
+      setErrorMessage('Please install MetaMask browser extension to interact');
+    }
+  }
+
+  // update account, will cause component re-render
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getAccountBalance(newAccount.toString());
+  }
+
+  const getAccountBalance = (account) => {
+    window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
+        .then(balance => {
+          setUserBalance(ethers.utils.formatEther(balance));
+        })
+        .catch(error => {
+          setErrorMessage(error.message);
+        });
+  };
+
+  const chainChangedHandler = () => {
+    // reload the page to avoid any errors with chain change mid use of application
+    window.location.reload();
+  }
+
+
+  // listen for account changes
+  window.ethereum.on('accountsChanged', accountChangedHandler);
+
+  window.ethereum.on('chainChanged', chainChangedHandler);
+  //
+
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -39,6 +102,11 @@ const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const  connectWallet = () => {
+
+    console.log(11);
+  }
 
   return (
       <AppBar position="static"  >
@@ -110,36 +178,14 @@ const Header = () => {
                   </Button>
               ))}
             </Box>
-
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  Connect Wallet
-                </IconButton>
-              </Tooltip>
-              <Menu
-                  sx={{ mt: '45px' }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            <Button onClick={ connectWalletHandler}
+                style={{
+                  borderRadius: 10,
+                  backgroundColor: "#21b6ae",
+                  // padding: "18px 36px",
+                  fontSize: "18px"
+                }}
+                variant="contained">{connButtonText}</Button>
           </Toolbar>
         </Container>
       </AppBar>

@@ -215,15 +215,15 @@ function MainContributePage() {
               </Grid>
           </Container>
         </div>
-        <div className="video-container">
-        <iframe
-            className="iframe-bg"
-            src="https://www.youtube.com/embed/DUw2b79Jh4M?&autoplay=1&mute=1&loop=1&playlist=DUw2b79Jh4M" title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; loop;clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
-        </div>
-        {/*<video src={bgVideo} autoPlay loop playsInline muted></video>*/}
+        {/*<div className="video-container">*/}
+        {/*<iframe*/}
+        {/*    className="iframe-bg"*/}
+        {/*    src="https://www.youtube.com/embed/DUw2b79Jh4M?&autoplay=1&mute=1&loop=1&playlist=DUw2b79Jh4M" title="YouTube video player"*/}
+        {/*        frameBorder="0"*/}
+        {/*        allow="accelerometer; autoplay; loop;clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+        {/*        allowFullScreen></iframe>*/}
+        {/*</div>*/}
+        <video src={bgVideo} autoPlay loop playsInline muted></video>
       </div>
 
   );

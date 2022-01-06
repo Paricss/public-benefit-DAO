@@ -28,7 +28,9 @@ const { DrizzleProvider } = drizzleReactHooks;
 function App() {
   return (
       <div >
+
         <Header />
+        <MainContributePage />
           <Routes>
             <Route path="/ICO" element = {<ICO /> }/>
             <Route path="/mainContributePage" element = {<MainContributePage /> }/>

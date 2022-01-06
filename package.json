@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/slowpon/public-benefit-DAO#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.3.3"
+    "@openzeppelin/contracts": "^4.3.3",
+    "@truffle/hdwallet-provider": "^2.0.0"
   }
 }
