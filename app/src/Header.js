@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './assets/css/header.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +12,13 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 //img icon
 import logo from './assets/img/earthLogo.png';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -111,8 +118,13 @@ const Header = () => {
   return (
       <AppBar position="static"  >
         <Container maxWidth="lg">
+
           <Toolbar disableGutters>
+
+
+
             <img src={logo} width="70"/>
+            <Link  to="/" style={{ textDecoration: 'none' , color: 'white'}}>
             <Typography
                 variant="h6"
                 noWrap
@@ -122,70 +134,67 @@ const Header = () => {
 
               &nbsp;&nbsp;<strong>Better</strong>&nbsp;DAO
             </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleOpenNavMenu}
-                  color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorElNav}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left',
-                  }}
-                  open={Boolean(anchorElNav)}
-                  onClose={handleCloseNavMenu}
-                  sx={{
-                    display: { xs: 'block', md: 'none' },
-                  }}
-              >
-                {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            </Link>
             <Typography
                 variant="h6"
                 noWrap
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
             >
-              <h2>BetterDAO</h2>
+              <h2 >BetterDAO</h2>
             </Typography>
+
+            {/*<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>*/}
+            {/*  {pages.map((page) => (*/}
+            {/*      <Button*/}
+            {/*          key={page}*/}
+            {/*          onClick={handleCloseNavMenu}*/}
+            {/*          sx={{ my: 2, color: 'white', display: 'block' }}*/}
+            {/*      >*/}
+            {/*        {page}*/}
+            {/*      </Button>*/}
+            {/*  ))}*/}
+            {/*</Box>*/}
+            <Button
+                // key={page}
+                // onClick={handleCloseNavMenu}
+                component={Link}
+                to={"/DAO"}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              DAO
+            </Button>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
+
                   <Button
-                      key={page}
-                      onClick={handleCloseNavMenu}
+                      // key={page}
+                      // onClick={handleCloseNavMenu}
+                      component={Link}
+                      to={"/ICO"}
                       sx={{ my: 2, color: 'white', display: 'block' }}
                   >
-                    {page}
+                    <TwitterIcon/>
                   </Button>
-              ))}
+              <Button
+                  // key={page}
+                  // onClick={handleCloseNavMenu}
+                  component={Link}
+                  to={"/ICO"}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Discord
+              </Button>
+
             </Box>
-            <Button onClick={ connectWalletHandler}
-                style={{
-                  borderRadius: 10,
-                  backgroundColor: "#21b6ae",
-                  // padding: "18px 36px",
-                  fontSize: "18px"
-                }}
-                variant="contained">{connButtonText}</Button>
+            {/*<Button onClick={ connectWalletHandler}*/}
+            {/*    style={{*/}
+            {/*      borderRadius: 10,*/}
+            {/*      backgroundColor: "#21b6ae",*/}
+            {/*      // padding: "18px 36px",*/}
+            {/*      fontSize: "18px"*/}
+            {/*    }}*/}
+            {/*    variant="contained">{connButtonText}*/}
+            {/*</Button>*/}
           </Toolbar>
         </Container>
       </AppBar>

@@ -48,3 +48,17 @@ video {
     align-items: center;
     justify-content: center;
 }
+
+.description{
+    /*height: 502px;*/
+    border-radius: 20px;
+    background-color: white;
+    padding: 6%;
+}
+
+.announcement{
+    padding-top: 30%;
+}
+.announcement > p,h1{
+    color: white;
+}

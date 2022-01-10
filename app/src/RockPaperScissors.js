@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import RockPaperScissors from './contracts/RockPaperScissors.json';
 import HumanToken from './contracts/HumanToken.json';
+import AnimalWorldCollectionABI from './contracts/AnimalWorldCollection.json'
 import  Web3 from 'web3';
 import { getWeb3 } from './utils.js';
 import {ethers} from 'ethers'
@@ -51,8 +52,8 @@ function RockPaperScissorsPage() {
       );
 
       const tokenContract = new web3.eth.Contract(
-          HumanToken.abi,
-           "0x29B3f5358ADF061c696bd2FF3d9113fdfAC547dC",
+          AnimalWorldCollectionABI.abi,
+           "0x9b154439b7351E8d347f66844D19796C2eF81F5E",
       );
 
       setWeb3(web3);
@@ -140,6 +141,14 @@ function RockPaperScissorsPage() {
     console.log(34);
   }
 
+  async function mint(e){
+    e.preventDefault();
+    await tokenContract.methods.mint(1).send({from: accounts[0]});
+
+
+    console.log(34);
+  }
+
   async function test2(e){
     e.preventDefault();
     const re = await contract.methods.test3().call();
@@ -197,7 +206,7 @@ function RockPaperScissorsPage() {
           <p>{result && `Result: ${result}`}</p>
         </form>
         <div> <button type="submit" onClick = {e => newGame(e)}>New Game</button></div>
-
+        <div> <button type="submit" onClick = {e => mint(e)}>Mint</button></div>
       </div>
       {/*<Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />*/}
     </Container>

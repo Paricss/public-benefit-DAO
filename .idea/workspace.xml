@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7bcd1b37-b829-4fa2-8b13-aab65cfb797b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/NFTMint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/css/DAO.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/FundCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/FundCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/MainContributePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/MainContributePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/MemberLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/MemberLevel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/RockPaperScissors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/RockPaperScissors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/css/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/assets/css/mainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/2_deploy_contracts.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/2_deploy_contracts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/DAO.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="23LszMEoT63S4TiElBqgrzmt0uU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/assets/css" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/assets/css" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bcd1b37-b829-4fa2-8b13-aab65cfb797b" name="Default Changelist" comment="" />
+      <created>1641524963010</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641524963010</updated>
+      <workItem from="1641524964115" duration="33667000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="590" y="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1641536500545">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state x="590" y="398" key="#com.intellij.fileTypes.FileTypeChooser/-1920.94.1920.1055/0.25.1680.1025@0.25.1680.1025" timestamp="1641536500545" />
+    <state x="-804" y="636" width="552" height="276" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1641843037325">
+      <screen x="-1920" y="94" width="1920" height="1055" />
+    </state>
+    <state x="-804" y="636" width="552" height="276" key="org.intellij.images.editor.actions.BackgroundImageDialog/-1920.94.1920.1055/0.25.1680.1025@-1920.94.1920.1055" timestamp="1641843037325" />
+  </component>
+</project>

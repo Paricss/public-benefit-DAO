@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
-import seaOtter from './assets/img/seaOtter.jpg';
-import seal from './assets/img/seal.jpg';
+import seaOtter from './assets/img/purpleOtter.jpg';
+import seal from './assets/img/whiteOtter.jpg';
 import {styled} from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
@@ -16,7 +16,7 @@ function FundCarousel() {
               className="d-block w-100"
               src={seaOtter}
               alt="First slide"
-              width={"100%"}
+              width={"90%"}
               className="imgRadius"
           />
           <Carousel.Caption>
@@ -29,7 +29,7 @@ function FundCarousel() {
               className="d-block w-100"
               src={seal}
               alt="Second slide"
-              width={"100%"}
+              width={"90%"}
               className="imgRadius"
 
           />

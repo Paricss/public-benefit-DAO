@@ -8,6 +8,9 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import roadmap from './assets/img/roadmap.png';
+import projectDiagram from './assets/img/projectDiagram.png';
+import projectDiagram2 from './assets/img/projectDiagram2.png';
+
 import bgVideo from './assets/img/bgVideo.mp4';
 import CustomizedProgressBars from './CustomizedProgressBars';
 import MemberLevel from "./MemberLevel";
@@ -116,42 +119,58 @@ function MainContributePage() {
             {/*      <a href="https://twitter.com/BetterDAO"><TwitterIcon /> <span>@BetterDAO</span></a>*/}
             {/*    </div>*/}
             {/*  </div>*/}
-
-
-
             {/*</Grid>*/}
             <Grid item xs={8} md={8}>
 
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <Item style={{ background: 'transparent',boxShadow: 'none'}}>
-              <Grid item xs={12} md={12} >
-                <h2 className="buyComponentMargin wordColor">End Time:</h2>
-                <p className="wordColor">Jan 01 2022</p>
-              </Grid>
-              <Grid item xs={12} md={12}>
-                <h2 className="buyComponentMargin wordColor">Volume:</h2>
-                <p className="wordColor">Ξ 324.00</p>
-              </Grid>
-              <Grid item xs={12} md={12}>
-                <h2 className="buyComponentMargin wordColor">$Better Address:</h2>
-                <p className="wordColor">0xDFc8475f43516133D79694C0E8670A73BEc7Fb09</p>
-              </Grid>
-               <div className="buyComponentMargin"><CustomizedProgressBars /></div>
-                <br/>
+            {/*  <Item style={{ background: 'transparent',boxShadow: 'none'}}>*/}
+            {/*  <Grid item xs={12} md={12} >*/}
+            {/*    <h2 className="buyComponentMargin wordColor">End Time:</h2>*/}
+            {/*    <p className="wordColor">Jan 01 2022</p>*/}
+            {/*  </Grid>*/}
+            {/*  <Grid item xs={12} md={12}>*/}
+            {/*    <h2 className="buyComponentMargin wordColor">Volume:</h2>*/}
+            {/*    <p className="wordColor">Ξ 324.00</p>*/}
+            {/*  </Grid>*/}
+            {/*  <Grid item xs={12} md={12}>*/}
+            {/*    <h2 className="buyComponentMargin wordColor">$Better Address:</h2>*/}
+            {/*    <p className="wordColor">0xDFc8475f43516133D79694C0E8670A73BEc7Fb09</p>*/}
+            {/*  </Grid>*/}
+            {/*   <div className="buyComponentMargin"><CustomizedProgressBars /></div>*/}
+            {/*    <br/>*/}
 
-                <CssTextField label="ETH" id="custom-css-outlined-input" />
+            {/*    <CssTextField label="ETH" id="custom-css-outlined-input" />*/}
 
-                <Button variant="contained"><DrizzleProvider drizzle={drizzle} >
-                  <LoadingContainer>
-                    {/*<ICOInfo />*/}
-                    <Investor values ={values.amount}/>
-                    {/*<Admin />*/}
-                  </LoadingContainer>
-                  </DrizzleProvider>
-                </Button>
-                <p style={{margin:'0 0 0 20px' ,color:'white'}}>100 000 $Better / ETH</p>
+            {/*    /!*<Button variant="contained">*!/*/}
+            {/*    /!*  <DrizzleProvider drizzle={drizzle} >*!/*/}
+            {/*    /!*  <LoadingContainer>*!/*/}
+            {/*    /!*    /!*<ICOInfo />*!/*!/*/}
+            {/*    /!*    <Investor values ={values.amount}/>*!/*/}
+            {/*    /!*    /!*<Admin />*!/*!/*/}
+            {/*    /!*  </LoadingContainer>*!/*/}
+            {/*    /!*  </DrizzleProvider>*!/*/}
+            {/*    /!*</Button>*!/*/}
+            {/*    <p style={{margin:'0 0 0 20px' ,color:'white'}}>100 000 $Better / ETH</p>*/}
+            {/*  </Item>*/}
+              <Item  style={{ background: 'transparent',boxShadow: 'none'}}>
+               {/*<div className="description" style={{ boxShadow: 'none'}}>*/}
+               {/*  <h2>What does BetterDAO do?</h2>*/}
+               {/*  <p>BetterDAO is decentralized The Nobel Prize. BetterDAO builds a bridge to members between scientists, developers, artists and so on. For example, people get options to share part of their Intellectual Properties in the form of NFT with BetterDAO members for funds.</p>*/}
+               {/*  <h2>The First Step </h2>*/}
+               {/*  <p>We are so glad to cooperate with Alaska SeaLife Center which is a non-profit research institution. Every NFT minted from our DAO records what holders donate to Alaska SeaLife Center. Another interesting thing is that minter can get the membership of SeaLife Center and BetterDAO, which contains many benefits.</p>*/}
+               {/*  <h2>When</h2>*/}
+               {/*  <h5> NFT Minting will launch in January 2022. </h5>*/}
+               {/*  <h5> DAO will launch after NFT Minting.</h5>*/}
+               {/*</div>*/}
+                <div className="announcement">
+                  <h1>Better Creature NFT</h1>
+                  <p>By BetterDAO - minting early 2022</p>
+                  <Button variant="contained">
+                    <h2>Mint</h2>
+                  </Button>
+                </div>
               </Item>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -189,22 +208,32 @@ function MainContributePage() {
 
         <div className='mainPage'>
           <Container maxWidth="lg">
+
+
             <Grid container spacing={3} rowSpacing={1} >
+
               <Grid item xs={12} md={6} >
-              <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
-                <h2>BetterDAO Roadmap</h2>
-                <img width="100%" src={roadmap}/>
-              </Item>
-            </Grid>
-              <Grid item xs={12} md={6}>
                 <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
-                  <h2>How to contribute</h2>
-                  <iframe width="70%" height="250" src="https://www.youtube.com/embed/OsRIHlr0_Iw"
-                          title="YouTube video player" frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen></iframe>
+                  <h2>How BetterDAO Launches</h2>
+                  <img width="100%" src={projectDiagram}/>
                 </Item>
-              </Grid></Grid>
+              </Grid>
+              <Grid item xs={12} md={6} >
+                <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">
+                  <h2>How BetterDAO works</h2>
+                  <img width="100%" src={projectDiagram2}/>
+                </Item>
+              </Grid>
+              {/*<Grid item xs={12} md={6}>*/}
+              {/*  <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">*/}
+              {/*    <h2>How to contribute</h2>*/}
+              {/*    <iframe width="70%" height="250" src="https://www.youtube.com/embed/OsRIHlr0_Iw"*/}
+              {/*            title="YouTube video player" frameBorder="0"*/}
+              {/*            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+              {/*            allowFullScreen></iframe>*/}
+              {/*  </Item>*/}
+              {/*</Grid>*/}
+            </Grid>
 
               <Grid item xs={12} md={12} >
                 <Item style={{ background: 'transparent', boxShadow: 'none'}} className="gapMargin">

@@ -25,38 +25,45 @@ function MemberLevel() {
   return (
       <div>
         <Grid container spacing={2}>
-          <Grid item xs={6} md={3} lg={3}  style={{ background: 'white'}}>
-            <Item  style={{ background: 'transparent', boxShadow: 'none'}}>
-              <h2>Whale</h2>
+          <Grid item xs={6} md={3} lg={3}>
+            <Item style={{ background: 'transparent', boxShadow: 'none'}}>
+              <h2>Shark</h2>
               <img width="80%" src={levelWhale}/>
-
             </Item>
-            <p>👌$Better Token</p>
-            <p>👌BetterDAO NFT Collection</p>
-            <p>👌Animal Adoption NFT</p>
-            <p>👌Membership</p>
-            <p>👌VIP Tour</p>
+            <h4>Hold 10 NFTs</h4>
+            <p>👌 Membership of BetterDAO - Whale</p>
+            <p>👌 Membership of SeaLife Center</p>
+            <p>👌 $Better whitelist </p>
+            <p>👌 $Better Airdrop Lv4 </p>
+            <p>👌 Adopt an animal in the center</p>
           </Grid>
           <Grid item xs={6} md={3} lg={3}>
             <Item style={{ background: 'transparent', boxShadow: 'none'}}>
               <h2>Shark</h2>
               <img width="80%" src={levelShark}/>
             </Item>
-            <p>👌$Better Token</p>
-            <p>👌BetterDAO NFT Collection</p>
-            <p>👌Animal Adoption NFT</p>
-            <p>👌Membership</p>
+            <h4>Hold 5 NFTs</h4>
+            <p>👌 Membership of BetterDAO - Shark</p>
+            <p>👌 Membership of SeaLife Center</p>
+            <p>👌 $Better whitelist </p>
+            <p>👌 $Better Airdrop Lv3 </p>
           </Grid>
           <Grid item xs={6} md={3} lg={3}>
             <Item style={{ background: 'transparent', boxShadow: 'none'}}> <h2>Turtle</h2><img width="80%" src={levelTurtle}/>
             </Item>
-            <p>👌$Better Token</p>
-            <p>👌BetterDAO NFT Collection</p>
+            <h4>Hold 2 NFTs</h4>
+            <p>👌 Membership of BetterDAO- Turtle</p>
+            <p>👌 Membership of SeaLife Center</p>
+            <p>👌 $Better whitelist </p>
+            <p>👌 $Better Airdrop Lv2 </p>
           </Grid>
           <Grid item xs={6} md={3} lg={3}>
             <Item style={{ background: 'transparent', boxShadow: 'none'}}><h2>Squid</h2> <img width="80%" src={levelSquid}/>
             </Item>
-            <p>👌$Better Token</p>
+            <h4>Hold 1 NFTs</h4>
+            <p>👌 Membership of BetterDAO - Squid </p>
+            <p>👌 $Better whitelist</p>
+            <p>👌 $Better Airdrop Lv1 </p>
           </Grid>
         </Grid>
       </div>
