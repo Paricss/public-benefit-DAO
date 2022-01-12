@@ -6,8 +6,8 @@ async function main(){
   const NFTCollection = await ethers.getContractFactory("NFTCollection");
   //it is important to keep a / in the end
   const nftCollection = await NFTCollection.deploy(
-      "SuperMarioWorldCollection",
-      "SPWC",
+      "BetterDAO",
+      "Better",
       "https://ipfs.io/ipfs/QmSeMaCMfnZyoYgJ6ws132oppLxSPfG7d4t4kw6RmKKkn3/"
   );
   await nftCollection.deployed();
@@ -16,7 +16,7 @@ async function main(){
   // we don't need url anymore
   // await animalWorld.mint("https://ipfs.io/ipfs/QmSeMaCMfnZyoYgJ6ws132oppLxSPfG7d4t4kw6RmKKkn3");
   // await animalWorld.mint(3);
-  // await animalWorld.mint(1);
+  await nftCollection.mint(1);
 
   console.log("NFT successfully minted");
 }

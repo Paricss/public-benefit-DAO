@@ -2,22 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bcd1b37-b829-4fa2-8b13-aab65cfb797b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/NFTMint.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/css/DAO.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/FundCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/FundCarousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ICO.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ICO.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/MainContributePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/MainContributePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/MemberLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/MemberLevel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/NFTMint.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/NFTMint.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/RockPaperScissors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/RockPaperScissors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/assets/css/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/assets/css/mainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/2_deploy_contracts.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/2_deploy_contracts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/DAO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/Context.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Context.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/ERC20.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/ERC20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/HumanToken.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/HumanToken.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/ICO.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/ICO.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/IERC20.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/IERC20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/IERC20Metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/IERC20Metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Migrations.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/Ownable.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Ownable.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/RockPaperScissors.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/RockPaperScissors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contracts/Vote.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Vote.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/deployCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/deployCollection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641524963010</updated>
-      <workItem from="1641524964115" duration="33667000" />
+      <workItem from="1641524964115" duration="40120000" />
     </task>
     <servers />
   </component>

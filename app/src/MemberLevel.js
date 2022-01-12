@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from '@mui/material/styles';
 import './assets/css/background.css';
+import './assets/css/mainPage.css';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -30,40 +31,49 @@ function MemberLevel() {
               <h2>Shark</h2>
               <img width="80%" src={levelWhale}/>
             </Item>
-            <h4>Hold 10 NFTs</h4>
-            <p>👌 Membership of BetterDAO - Whale</p>
-            <p>👌 Membership of SeaLife Center</p>
-            <p>👌 $Better whitelist </p>
-            <p>👌 $Better Airdrop Lv4 </p>
-            <p>👌 Adopt an animal in the center</p>
+            <div className="levelStyle">
+              <h4>Hold 10 NFTs</h4>
+              <p>👌 Membership of BetterDAO - Whale</p>
+              <p>👌 Membership of SeaLife Center</p>
+              <p>👌 $Better whitelist </p>
+              <p>👌 $Better Airdrop Lv4 </p>
+              <p>👌 Adopt an animal in the center</p>
+            </div>
+
           </Grid>
           <Grid item xs={6} md={3} lg={3}>
             <Item style={{ background: 'transparent', boxShadow: 'none'}}>
               <h2>Shark</h2>
               <img width="80%" src={levelShark}/>
             </Item>
-            <h4>Hold 5 NFTs</h4>
-            <p>👌 Membership of BetterDAO - Shark</p>
-            <p>👌 Membership of SeaLife Center</p>
-            <p>👌 $Better whitelist </p>
-            <p>👌 $Better Airdrop Lv3 </p>
+            <div className="levelStyle">
+              <h4>Hold 5 NFTs</h4>
+              <p>👌 Membership of BetterDAO - Shark</p>
+              <p>👌 Membership of SeaLife Center</p>
+              <p>👌 $Better whitelist </p>
+              <p>👌 $Better Airdrop Lv3 </p>
+            </div>
           </Grid>
           <Grid item xs={6} md={3} lg={3}>
             <Item style={{ background: 'transparent', boxShadow: 'none'}}> <h2>Turtle</h2><img width="80%" src={levelTurtle}/>
             </Item>
-            <h4>Hold 2 NFTs</h4>
-            <p>👌 Membership of BetterDAO- Turtle</p>
-            <p>👌 Membership of SeaLife Center</p>
-            <p>👌 $Better whitelist </p>
-            <p>👌 $Better Airdrop Lv2 </p>
+            <div className="levelStyle">
+              <h4>Hold 2 NFTs</h4>
+              <p>👌 Membership of BetterDAO- Turtle</p>
+              <p>👌 Membership of SeaLife Center</p>
+              <p>👌 $Better whitelist </p>
+              <p>👌 $Better Airdrop Lv2 </p>
+            </div>
           </Grid>
           <Grid item xs={6} md={3} lg={3}>
             <Item style={{ background: 'transparent', boxShadow: 'none'}}><h2>Squid</h2> <img width="80%" src={levelSquid}/>
             </Item>
-            <h4>Hold 1 NFTs</h4>
-            <p>👌 Membership of BetterDAO - Squid </p>
-            <p>👌 $Better whitelist</p>
-            <p>👌 $Better Airdrop Lv1 </p>
+            <div className="levelStyle">
+              <h4>Hold 1 NFTs</h4>
+              <p>👌 Membership of BetterDAO - Squid </p>
+              <p>👌 $Better whitelist</p>
+              <p>👌 $Better Airdrop Lv1 </p>
+            </div>
           </Grid>
         </Grid>
       </div>

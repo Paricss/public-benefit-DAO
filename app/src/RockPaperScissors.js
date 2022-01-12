@@ -3,7 +3,7 @@ import RockPaperScissors from './contracts/RockPaperScissors.json';
 import HumanToken from './contracts/HumanToken.json';
 import AnimalWorldCollectionABI from './contracts/AnimalWorldCollection.json'
 import  Web3 from 'web3';
-import { getWeb3 } from './utils.js';
+import { getWeb3 } from './utils.js.js';
 import {ethers} from 'ethers'
 
 //img

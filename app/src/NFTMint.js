@@ -1,105 +1,112 @@
 // https://docs.metamask.io/guide/ethereum-provider.html#using-the-provider
 
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {ethers} from 'ethers'
-import AnimalWorldCollectionABI from './contracts/AnimalWorldCollection.json'
+
+
+//material ui
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+// select
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+//button
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+//
+
+//web3
+import { getWeb3 } from './utils.js.js';
+import AnimalWorldCollection from './contracts/AnimalWorldCollection.json'
+//
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
+
+
 
 const NFTMint = () => {
+  //web3
+  const [web3, setWeb3] = useState(undefined);
+  const [contract, setContract] = useState(undefined);
+  const [accounts, setAccounts] = useState(undefined);
+  //
 
-  // deploy simple storage contract and paste deployed contract address here. This value is local ganache chain
-  let contractAddress = '0x9b154439b7351E8d347f66844D19796C2eF81F5E';
+  //select
+  const [amount, setAmount] = React.useState('');
 
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [defaultAccount, setDefaultAccount] = useState(null);
-  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+  const handleChange = (event) => {
+    setAmount(event.target.value);
+  };
 
-  const [currentContractVal, setCurrentContractVal] = useState(null);
+  useEffect(() => {
+    const init = async () => {
+      const web3 = await getWeb3();
+      const accounts = await web3.eth.getAccounts();
+      const networkId = await web3.eth.net.getId();
+      const deployedNetwork = AnimalWorldCollection.networks[networkId];
 
-  const [provider, setProvider] = useState(null);
-  const [signer, setSigner] = useState(null);
-  const [contract, setContract] = useState(null);
+      const contract = new web3.eth.Contract(
+          AnimalWorldCollection.abi,
+          deployedNetwork && deployedNetwork.address,
+      );
 
-  const connectWalletHandler = () => {
-    if (window.ethereum && window.ethereum.isMetaMask) {
-
-      window.ethereum.request({ method: 'eth_requestAccounts'})
-          .then(result => {
-            accountChangedHandler(result[0]);
-            setConnButtonText('Wallet Connected');
-          })
-          .catch(error => {
-            setErrorMessage(error.message);
-
-          });
-
-    } else {
-      console.log('Need to install MetaMask');
-      setErrorMessage('Please install MetaMask browser extension to interact');
+      setWeb3(web3);
+      setAccounts(accounts);
+      setContract(contract);
+      console.log(accounts);
     }
-  }
+    init();
+    window.ethereum.on('accountsChanged', accounts => {
+      setAccounts(accounts);
+    });
 
-  // update account, will cause component re-render
-  const accountChangedHandler = (newAccount) => {
-    setDefaultAccount(newAccount);
-    updateEthers();
-  }
-
-  const chainChangedHandler = () => {
-    // reload the page to avoid any errors with chain change mid use of application
-    window.location.reload();
-  }
-
-
-  // listen for account changes
-  window.ethereum.on('accountsChanged', accountChangedHandler);
-
-  window.ethereum.on('chainChanged', chainChangedHandler);
-
-  const updateEthers = () => {
-    let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
-    setProvider(tempProvider);
-
-    let tempSigner = tempProvider.getSigner();
-    setSigner(tempSigner);
-
-    let tempContract = new ethers.Contract(contractAddress, AnimalWorldCollectionABI.abi, tempSigner);
-    setContract(tempContract);
-  }
-
-  const setHandler = (event) => {
-    event.preventDefault();
-    console.log('sending ' + event.target.setText.value + ' to the contract');
-    contract.set(event.target.setText.value);
-  }
-
-  const getCurrentVal = async () => {
-    let val = await contract.get();
-    setCurrentContractVal(val);
-  }
-
-  const mint = async (e) => {
-    e.preventDefault();
-    await contract.mint(1);
-  }
+  }, []);
 
   return (
-      <div>
-        <h4> {"Get/Set Contract interaction"} </h4>
-        <button onClick={connectWalletHandler}>{connButtonText}</button>
-        <div>
-          <h3>Address: {defaultAccount}</h3>
-        </div>
-        <form onSubmit={setHandler}>
-          <input id="setText" type="text"/>
-          <button type={"submit"}> Update Contract </button>
-        </form>
-        <div>
-          <button onClick={getCurrentVal} style={{marginTop: '5em'}}> Get Current Contract Value </button>
-        </div>
-        {currentContractVal}
-        {errorMessage}
-        <button onClick={mint}>Mintttt</button>
-      </div>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} md={6}>
+            <Item>
+              <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="demo-simple-select-helper-label">Amount</InputLabel>
+                <Select
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper"
+                    value={amount}
+                    label="Amount"
+                    onChange={handleChange}
+                >
+
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+                <Stack spacing={2} direction="row">
+                  <Button variant="contained">Connect Wallet</Button>
+                </Stack>
+                <Stack spacing={2} direction="row">
+                  <Button variant="contained">Mint</Button>
+                </Stack>
+              </FormControl>
+
+
+
+            </Item>
+          </Grid>
+        </Grid>
+      </Box>
   );
 }
 

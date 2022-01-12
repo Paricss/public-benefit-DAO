@@ -57,8 +57,12 @@ video {
 }
 
 .announcement{
-    padding-top: 30%;
+    padding-top: 15%;
 }
 .announcement > p,h1{
     color: white;
+}
+
+.levelStyle{
+    margin-left: 30px;
 }

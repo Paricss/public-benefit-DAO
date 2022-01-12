@@ -28,9 +28,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 //icon
 
 //drizzle
-import { Drizzle } from '@drizzle/store';
-import { drizzleReactHooks } from "@drizzle/react-plugin";
-import drizzleOptions from "./drizzleOptions";
+// import { Drizzle } from '@drizzle/store';
+// import { drizzleReactHooks } from "@drizzle/react-plugin";
+// import drizzleOptions from "./drizzleOptions";
 import LoadingContainer from "./LoadingContainer";
 import Investor from "./Investor";
 import FundCarousel from "./FundCarousel";
@@ -69,8 +69,8 @@ const CssTextField = styled(TextField)({
 });
 //
 
-const drizzle = new Drizzle(drizzleOptions);
-const { DrizzleProvider } = drizzleReactHooks;
+// const drizzle = new Drizzle(drizzleOptions);
+// const { DrizzleProvider } = drizzleReactHooks;
 //
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -167,9 +167,7 @@ function MainContributePage() {
                 <div className="announcement">
                   <h1>Better Creature NFT</h1>
                   <p>By BetterDAO - minting early 2022</p>
-                  <Button variant="contained">
-                    <h2>Mint</h2>
-                  </Button>
+                  <Button variant="contained">Mint</Button>
                 </div>
               </Item>
             </Grid>

@@ -9,20 +9,20 @@ import ICOInfo from './ICOInfo.js';
 import Investor from './Investor.js';
 import Admin from './Admin.js';
 
-const drizzle = new Drizzle(drizzleOptions);
-const { DrizzleProvider } = drizzleReactHooks;
+// const drizzle = new Drizzle(drizzleOptions);
+// const { DrizzleProvider } = drizzleReactHooks;
 
 function ICO() {
   return (
       <div className="container">
-        <h1>ICO</h1>
-        <DrizzleProvider drizzle={drizzle}>
-          <LoadingContainer>
-            <ICOInfo />
-            {/*<Investor />*/}
-            <Admin />
-          </LoadingContainer>
-        </DrizzleProvider>
+        {/*<h1>ICO</h1>*/}
+        {/*<DrizzleProvider drizzle={drizzle}>*/}
+        {/*  <LoadingContainer>*/}
+        {/*    <ICOInfo />*/}
+        {/*    /!*<Investor />*!/*/}
+        {/*    <Admin />*/}
+        {/*  </LoadingContainer>*/}
+        {/*</DrizzleProvider>*/}
       </div>
   );
 }
