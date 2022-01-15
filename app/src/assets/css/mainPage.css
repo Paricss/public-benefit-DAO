@@ -59,7 +59,7 @@ video {
 .announcement{
     padding-top: 15%;
 }
-.announcement > p,h1{
+.announcement > p,h1,h5{
     color: white;
 }
 

@@ -23,7 +23,8 @@ import Button from '@mui/material/Button';
 
 //web3
 import { getWeb3 } from './utils.js.js';
-import AnimalWorldCollection from './contracts/AnimalWorldCollection.json'
+import BetterNFTCollection from './contracts/BetterNFTCollection.json'
+import BetterNFTERC721 from './contracts/BetterNFTERC721.json'
 //
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -55,11 +56,11 @@ const NFTMint = () => {
       const web3 = await getWeb3();
       const accounts = await web3.eth.getAccounts();
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = AnimalWorldCollection.networks[networkId];
+      // const deployedNetwork = BetterNFTCollection.networks[networkId];
 
       const contract = new web3.eth.Contract(
-          AnimalWorldCollection.abi,
-          deployedNetwork && deployedNetwork.address,
+          BetterNFTCollection.abi,
+          "0x51070A0d6Ab8D72ED84062B930b0eF214B01a538",
       );
 
       setWeb3(web3);
@@ -73,6 +74,20 @@ const NFTMint = () => {
     });
 
   }, []);
+
+  async function mintNFT(e){
+    e.preventDefault();
+    await contract.methods.mint(1).send({from: accounts[0]});
+    console.log( 43);
+
+  }
+
+  async function revealNFT(e){
+    e.preventDefault();
+    await contract.methods.revealCollection().send({from: accounts[0]});
+    console.log( 333);
+
+  }
 
   return (
       <Box sx={{ flexGrow: 1 }}>
@@ -97,7 +112,10 @@ const NFTMint = () => {
                   <Button variant="contained">Connect Wallet</Button>
                 </Stack>
                 <Stack spacing={2} direction="row">
-                  <Button variant="contained">Mint</Button>
+                  <Button  onClick = {e => mintNFT(e)} variant="contained">Mint</Button>
+                </Stack>
+                <Stack spacing={2} direction="row">
+                  <Button  onClick = {e => revealNFT(e)} variant="contained">reveal</Button>
                 </Stack>
               </FormControl>
 

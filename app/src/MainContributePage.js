@@ -10,6 +10,7 @@ import { styled } from '@mui/material/styles';
 import roadmap from './assets/img/roadmap.png';
 import projectDiagram from './assets/img/projectDiagram.png';
 import projectDiagram2 from './assets/img/projectDiagram2.png';
+import coop from './assets/img/coop.png';
 
 import bgVideo from './assets/img/bgVideo.mp4';
 import CustomizedProgressBars from './CustomizedProgressBars';
@@ -168,7 +169,11 @@ function MainContributePage() {
                   <h1>Better Creature NFT</h1>
                   <p>By BetterDAO - minting early 2022</p>
                   <Button variant="contained">Mint</Button>
+                  <img width="100%" src={coop}/>
+                  <h5>All funds will be used to donate to ASC and launch BetterDAO</h5>
                 </div>
+
+
               </Item>
             </Grid>
             <Grid item xs={12} md={6}>
